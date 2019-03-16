@@ -4,12 +4,12 @@
   <button class="btn-primary" (click)="logMessage(myInput.value)">Log</button> 
   {{msg}}
 
-  
+  <br>
   <input  type ="text" [(ngModel)]="name">
   {{name}}
   
-  
-  
+  <br>
+ 
   
   <ngb-accordion #acc="ngbAccordion" activeIds="ngb-panel-0">
     <ngb-panel title="Simple">
@@ -47,3 +47,45 @@
     </ngb-panel>
   </ngb-accordion>
 </p>
+<br>
+<button class="btn-primary" (click)="changeview()">Change</button> 
+
+
+
+<div class ="row" *ngFor="let color of colors">
+    <div class = "col-md-1"></div>
+    <div class = "col-md-8">
+      <h2>{{color}}</h2>
+      <div *ngIf = "displayName; then thenBlock; else elseBlock"></div>
+<ng-template #thenBlock>
+  <h2>Servlets</h2>
+  Servlets | Servlet Tutorial
+  java servlet tutorial
+  Servlet technology is used to create a web application (resides at server side and generates a dynamic web page).
+  Servlet technology is robust and scalable because of java language. Before Servlet, CGI (Common Gateway Interface) scripting language was common as a server-side programming language. However, there were many disadvantages to this technology. We have discussed these disadvantages below.
+  There are many interfaces and classes in the Servlet API such as Servlet, GenericServlet, HttpServlet, ServletRequest, ServletResponse, etc.
+</ng-template>
+
+<ng-template #elseBlock>
+  <h2>suravi</h2>
+  There are many methods in HttpServlet class. They are as follows:
+  public void service(ServletRequest req,ServletResponse res) dispatches the request to the protected service method by converting the request and response object into http type.
+  protected void service(HttpServletRequest req, HttpServletResponse res) receives the request from the service method, and dispatches the request to the doXXX() method depending on the incoming http request type.
+  protected void doGet(HttpServletRequest req, HttpServletResponse res) handles the GET request. It is invoked by the web container.
+  protected void doPost(HttpServletRequest req, HttpServletResponse res) handles the POST request. It is invoked by the web container.
+  protected void doHead(HttpServletRequest req, HttpServletResponse res) handles the HEAD request. It is invoked by the web container.
+  protected void doOptions(HttpServletRequest req, HttpServletResponse res) handles the OPTIONS request. It is invoked by the web container.
+  protected void doPut(HttpServletRequest req, HttpServletResponse res) handles the PUT request. It is invoked by the web container.
+  protected void doTrace(HttpServletRequest req, HttpServletResponse res) handles the TRACE request. It is invoked by the web container.
+  protected void doDelete(HttpServletRequest req, HttpServletResponse res) handles the DELETE request. It is invoked by the web container.
+
+ 
+
+</ng-template>
+  </div>
+    
+  </div>
+<br>
+<div>
+  <b>{{"Hello " + parentData}}</b>
+</div> 

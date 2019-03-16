@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'app-test',
@@ -7,6 +7,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TestComponent implements OnInit {
   public msg= "Mo message";
+  public displayName = false;
+  public colors = ["red","blue","green","yellow"];
+
+  @Input() public parentData;
   constructor() { }
 
   ngOnInit() {
@@ -15,4 +19,12 @@ export class TestComponent implements OnInit {
     console.log(value);
     this.msg=value;
   }
+  changeview(){
+    if(this.displayName){
+        this.displayName=false;
+    }else{
+      this.displayName=true;
+    }
+  }
+ 
 }
