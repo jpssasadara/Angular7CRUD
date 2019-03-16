@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { EmployeeService } from '../employee.service';
 @Component({
-  selector: 'app-employee-details',
+  selector: 'router-outlet2',
   templateUrl: './employee-details.component.html',
   styleUrls: ['./employee-details.component.css']
 })
@@ -14,7 +14,7 @@ export class EmployeeDetailsComponent implements OnInit {
   ngOnInit() {
     //this.employees = this._employeeService.getEmployees();
     this._employeeService.getEmployees()
-        .subscribe(data => this.employees = data);
+        .subscribe(data => this.employees = data)
   }
 
 }
