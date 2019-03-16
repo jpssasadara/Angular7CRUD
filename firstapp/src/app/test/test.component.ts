@@ -6,10 +6,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./test.component.css']
 })
 export class TestComponent implements OnInit {
-
+  public msg= "Mo message";
   constructor() { }
 
   ngOnInit() {
   }
-
+  logMessage(value){
+    console.log(value);
+    this.msg=value;
+  }
 }
